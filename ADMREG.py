@@ -107,9 +107,9 @@ class Test:
             admin_count = row[0] if row else 0
 
             if admin_count > 1:
-                out = {"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
+                out = {"err_count": "1","msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
             else:
-                out = {"err_count": 0,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
+                out = {"err_count": "0","msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
 
             print(json.dumps(out, ensure_ascii=False))
             return out
