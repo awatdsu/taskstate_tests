@@ -319,18 +319,18 @@ class JWTVuln(Test):
         token = self.get_token_from_db()
         token_self_generated = self.jwt_encod(user_id=1, login=login)
         if token == token_self_generated:
-            out = {"errcount": 1, "msgdeny": "Тест провален"}
+            out = {"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
         else:
-            out = {"errcount": 0, "msgok": "Тест успешно завершен"}
+            out = {"err_count": 0,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
         print(out)
 
     def run(self):
         # self.reset_db()
         # self.exploit_jwt_vuln()
         if JWT_KEY == "CTF-2#PirateLabel":
-            out = {"errcount": 1, "msgdeny": "Тест провален"}
+            out = {"err_count": 1, "msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
         else:
-            out = {"errcount": 0, "msgok": "Тест успешно завершен"}
+            out = {"err_count": 0, "msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
         print(out)
 
 

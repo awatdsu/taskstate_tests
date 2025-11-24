@@ -107,9 +107,9 @@ class Test:
             admin_count = row[0] if row else 0
 
             if admin_count > 1:
-                out = {"errcount": 1, "msgdeny": "Тест провален"}
+                out = {"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
             else:
-                out = {"errcount": 0, "msgok": "Тест успешно завершен"}
+                out = {"err_count": 0,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
 
             print(json.dumps(out, ensure_ascii=False))
             return out
@@ -152,7 +152,7 @@ class ADMREGVuln(Test):
         self.reset_db()
         session, rid = self.register_first_user(login="test123", password=PASSWORD)
         if not session:
-            print(json.dumps({"errcount": 1, "msgdeny": "Failed to register user!"}))
+            print(json.dumps({"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Failed to register user!"}))
 
         self.exploit_admreg_vuln(session=session, rid=rid, count=4)
         self.check_db()

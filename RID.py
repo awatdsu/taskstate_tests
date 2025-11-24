@@ -227,14 +227,14 @@ class RIDVuln(Test):
             kstatus = row[0] if row else 0
 
             if str(kstatus) == "2":
-                out = {"errcount": 1, "msgdeny": "Тест провален"}
+                out = {"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
             else:
-                out = {"errcount": 0, "msgok": "Тест успешно завершен"}
+                out = {"err_count": 0,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
 
             print(json.dumps(out, ensure_ascii=False))
             return out
         except Exception as e:
-            out = {"errcount": 1, "msgdeny": f"{e}"}
+            out = {"err_count": 1,"msg_ok": "Тест успешно завершен", "msg_deny": "Тест провален!"}
             print(json.dumps(out))
             return out
 
