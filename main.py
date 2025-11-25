@@ -14,8 +14,8 @@ import jwt
 import requests
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB_FILE = os.path.join(BASE_DIR, "data", "taskstate.db")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DB_FILE = os.path.join(BASE_DIR,"taskstate", "data", "taskstate.db")
 
 sys.path.insert(1, BASE_DIR)
 
