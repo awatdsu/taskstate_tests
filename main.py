@@ -374,7 +374,7 @@ def main():
         print(json.dumps(out_str))
         return
     # print(err_count)
-    done_str = f"Выявлены не все уязвимости! Осталось: {err_count} Найденные и уже исправленные уязвимости:"
+    done_str = f"Выявлены не все уязвимости! Осталось: {err_count}! Найденные и уже исправленные уязвимости:"
     # not_done_str = "Not completed:"
     for key, value in results.items():
         if value == 0:
